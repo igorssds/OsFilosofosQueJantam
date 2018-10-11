@@ -1,0 +1,9 @@
+c:\users\aluno\documents\visual studio 2017\Projects\FilosofosQueJantam\FilosofosQueJantam\bin\Debug\FilosofosQueJantam.exe.config
+c:\users\aluno\documents\visual studio 2017\Projects\FilosofosQueJantam\FilosofosQueJantam\bin\Debug\FilosofosQueJantam.exe
+c:\users\aluno\documents\visual studio 2017\Projects\FilosofosQueJantam\FilosofosQueJantam\bin\Debug\FilosofosQueJantam.pdb
+c:\users\aluno\documents\visual studio 2017\Projects\FilosofosQueJantam\FilosofosQueJantam\obj\Debug\FilosofosQueJantam.csprojResolveAssemblyReference.cache
+c:\users\aluno\documents\visual studio 2017\Projects\FilosofosQueJantam\FilosofosQueJantam\obj\Debug\FilosofosQueJantam.Form1.resources
+c:\users\aluno\documents\visual studio 2017\Projects\FilosofosQueJantam\FilosofosQueJantam\obj\Debug\FilosofosQueJantam.Properties.Resources.resources
+c:\users\aluno\documents\visual studio 2017\Projects\FilosofosQueJantam\FilosofosQueJantam\obj\Debug\FilosofosQueJantam.csproj.GenerateResource.Cache
+c:\users\aluno\documents\visual studio 2017\Projects\FilosofosQueJantam\FilosofosQueJantam\obj\Debug\FilosofosQueJantam.exe
+c:\users\aluno\documents\visual studio 2017\Projects\FilosofosQueJantam\FilosofosQueJantam\obj\Debug\FilosofosQueJantam.pdb
