@@ -10,104 +10,135 @@ namespace FilosofosQueJantam
     {
         private bool TokenE, TokenD;
         private bool GarfoE, GarfoD;
-        private bool Comendo, Meditando = true , ComFome;
-        private bool GarfoSujoD , GarfoSujoE;
+        private bool Comendo, Meditando = true, ComFome;
+        private bool GarfoSujoD, GarfoSujoE;
         public Filosofo VizinhoE, VizinhoD;
-        
-        private void EnviarTokenE()
+
+
+
+        public Filosofo(bool tokenE, bool tokenD, bool garfoE, bool garfoD, bool garfoSujoE, bool garfoSujoD)
+        {
+            TokenE = tokenE;
+            TokenD = tokenD;
+            GarfoE = garfoE;
+            GarfoD = garfoD;
+            GarfoSujoE = garfoSujoE;
+            GarfoSujoD = garfoSujoD;
+
+
+            
+
+        }
+
+        public void EnviarTokenE()
         {
             TokenE = false;
             VizinhoE.ReceberTokenD();
         }
 
-        private void EnviarTokenD()
+        public void EnviarTokenD()
         {
             TokenD = false;
             VizinhoD.ReceberTokenE();
         }
 
-        private void ReceberTokenE()
+        public void ReceberTokenE()
         {
             TokenE = true;
-            //@@@
+
+            if (!Comendo && GarfoE && GarfoSujoE)
+            {
+                EnviarGarfE();
+                //@@@@
+            }
+
         }
 
-        private void ReceberTokenD()
+        public void ReceberTokenD()
         {
             TokenD = true;
-            //@@@
+
+            if (!Comendo && GarfoD && GarfoSujoD)
+            {
+                EnviarGarfD();
+            }
         }
 
 
-        private void EnviarGarfD()
+        public void EnviarGarfD()
         {
             GarfoD = false;
+            GarfoSujoD = false;
             VizinhoD.ReceberGarfoE();
-            //@@@
         }
 
-        private void EnviarGarfE()
+        public void EnviarGarfE()
         {
             GarfoE = false;
+            GarfoSujoE = false;
             VizinhoE.ReceberGarfoD();
-            //@@@
         }
 
-        private void ReceberGarfoE()
+        public void ReceberGarfoE()
         {
             GarfoE = true;
             GarfoSujoE = false;
             VerificarComer();
         }
 
-        private void ReceberGarfoD()
+        public void ReceberGarfoD()
         {
             GarfoD = true;
             GarfoSujoD = false;
             VerificarComer();
         }
 
-        private void VerificarComer()
+        public void VerificarComer()
         {
-            Comendo = (GarfoE && GarfoD) ? true : false;
-            
-            if(Comendo)
+            Comendo = (GarfoE && GarfoD);
+
+            if (Comendo)
             {
+
+                Meditando = false;
+                ComFome = false;
+
                 GarfoSujoD = true;
                 GarfoSujoE = true;
-            } 
+            }
         }
 
-        private void PedirComer()
+        public void PedirComer()
         {
+            // if() @@@
+            Meditando = false;
+            ComFome = true;
+            Comendo = false;
+
             if (TokenD)
             {
-                if (GarfoSujoD)
-                {
-                    EnviarGarfD();
-                }
+                EnviarTokenD();
             }
 
             if (TokenE)
             {
-                if (GarfoSujoE)
-                {
-                    EnviarGarfE();
-                }
+                EnviarTokenE();
             }
         }
 
-        private void PararComer()
+        public void PararComer()
         {
+            // if () @@@
             Comendo = false;
-            if(TokenD)
+            Meditando = true;
+            if (TokenD)
             {
-                    EnviarGarfD();
+                EnviarGarfD();
             }
 
             if (TokenE)
             {
-                    EnviarGarfE();
+                EnviarGarfE();
             }
         }
     }

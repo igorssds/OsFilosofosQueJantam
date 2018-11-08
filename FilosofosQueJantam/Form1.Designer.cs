@@ -50,6 +50,9 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.btnf1 = new System.Windows.Forms.Button();
+            this.btnf2 = new System.Windows.Forms.Button();
+            this.btmf3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -78,7 +81,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::FilosofosQueJantam.Properties.Resources.Pensando;
-            this.pictureBox2.Location = new System.Drawing.Point(258, 235);
+            this.pictureBox2.Location = new System.Drawing.Point(275, 212);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(161, 118);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -97,7 +100,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(238, 271);
+            this.label2.Location = new System.Drawing.Point(255, 261);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 5;
@@ -133,7 +136,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(423, 294);
+            this.label6.Location = new System.Drawing.Point(440, 284);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 9;
@@ -142,7 +145,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(239, 294);
+            this.label7.Location = new System.Drawing.Point(256, 284);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 13);
             this.label7.TabIndex = 10;
@@ -169,7 +172,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(423, 271);
+            this.label10.Location = new System.Drawing.Point(440, 261);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(15, 13);
             this.label10.TabIndex = 13;
@@ -214,7 +217,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(239, 318);
+            this.label15.Location = new System.Drawing.Point(256, 308);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(14, 13);
             this.label15.TabIndex = 18;
@@ -241,17 +244,48 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(422, 318);
+            this.label18.Location = new System.Drawing.Point(439, 308);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(14, 13);
             this.label18.TabIndex = 21;
             this.label18.Text = "T";
+            // 
+            // btnf1
+            // 
+            this.btnf1.Location = new System.Drawing.Point(55, 166);
+            this.btnf1.Name = "btnf1";
+            this.btnf1.Size = new System.Drawing.Size(75, 23);
+            this.btnf1.TabIndex = 22;
+            this.btnf1.Text = "button1";
+            this.btnf1.UseVisualStyleBackColor = true;
+            this.btnf1.Click += new System.EventHandler(this.btnf1_Click);
+            // 
+            // btnf2
+            // 
+            this.btnf2.Location = new System.Drawing.Point(321, 336);
+            this.btnf2.Name = "btnf2";
+            this.btnf2.Size = new System.Drawing.Size(75, 23);
+            this.btnf2.TabIndex = 23;
+            this.btnf2.Text = "button2";
+            this.btnf2.UseVisualStyleBackColor = true;
+            // 
+            // btmf3
+            // 
+            this.btmf3.Location = new System.Drawing.Point(548, 166);
+            this.btmf3.Name = "btmf3";
+            this.btmf3.Size = new System.Drawing.Size(75, 23);
+            this.btmf3.TabIndex = 24;
+            this.btmf3.Text = "button3";
+            this.btmf3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 365);
+            this.Controls.Add(this.btmf3);
+            this.Controls.Add(this.btnf2);
+            this.Controls.Add(this.btnf1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -306,6 +340,9 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnf1;
+        private System.Windows.Forms.Button btnf2;
+        private System.Windows.Forms.Button btmf3;
     }
 }
 
