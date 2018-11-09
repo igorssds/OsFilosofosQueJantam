@@ -8,10 +8,10 @@ namespace FilosofosQueJantam
 {
     class Filosofo
     {
-        private bool TokenE, TokenD;
-        private bool GarfoE, GarfoD;
-        private bool Comendo, Meditando = true, ComFome;
-        private bool GarfoSujoD, GarfoSujoE;
+        public bool TokenE, TokenD;
+        public bool GarfoE, GarfoD;
+        public bool Comendo, Meditando = true, ComFome;
+        public bool GarfoSujoD, GarfoSujoE;
         public Filosofo VizinhoE, VizinhoD;
 
 
@@ -49,6 +49,8 @@ namespace FilosofosQueJantam
             if (!Comendo && GarfoE && GarfoSujoE)
             {
                 EnviarGarfE();
+
+                if (ComFome) EnviarTokenE();
                 //@@@@
             }
 
@@ -61,6 +63,8 @@ namespace FilosofosQueJantam
             if (!Comendo && GarfoD && GarfoSujoD)
             {
                 EnviarGarfD();
+
+                if (ComFome) EnviarTokenD();
             }
         }
 
@@ -111,35 +115,37 @@ namespace FilosofosQueJantam
         public void PedirComer()
         {
             // if() @@@
-            Meditando = false;
-            ComFome = true;
-            Comendo = false;
 
-            if (TokenD)
+            if (Meditando)
             {
-                EnviarTokenD();
+                Meditando = false;
+                ComFome = true;
+                Comendo = false;
+
+                if (TokenD) EnviarTokenD();
+                
+                if (TokenE) EnviarTokenE();
+                
             }
 
-            if (TokenE)
-            {
-                EnviarTokenE();
-            }
+            
         }
 
         public void PararComer()
         {
             // if () @@@
-            Comendo = false;
-            Meditando = true;
-            if (TokenD)
+            if (Comendo)
             {
-                EnviarGarfD();
-            }
+                Comendo = false;
+                ComFome = false;
+                Meditando = true;
 
-            if (TokenE)
-            {
-                EnviarGarfE();
+                if (TokenD) EnviarGarfD();
+
+                if (TokenE) EnviarGarfE();
+                
             }
+           
         }
     }
 }

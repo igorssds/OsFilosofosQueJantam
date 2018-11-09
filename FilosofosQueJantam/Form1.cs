@@ -17,7 +17,6 @@ namespace FilosofosQueJantam
         Filosofo f2 = new Filosofo(true, false, false, true, false, true);
         Filosofo f3 = new Filosofo(true, true, false, false, false, false);
 
-
         public Form1()
         {
             InitializeComponent();
@@ -32,18 +31,67 @@ namespace FilosofosQueJantam
             f3.VizinhoE = f2;
             f3.VizinhoD = f1;
 
-
+           
         }
 
 
         private void btnf1_Click(object sender, EventArgs e)
         {
-            
-            f1.VerificarComer();
-            //f2.VerificarComer();
-            f3.PedirComer();
-            f1.PararComer();
-            f2.PedirComer();
+            verificarImagens(f1, btnf1);
+        }
+
+        private void verificarImagens(Filosofo filosofo, Button botao)
+        {
+            if (filosofo.Meditando)
+            {
+                pictureBox1.Image = Properties.Resources.Pensando;
+
+                if (filosofo.GarfoE && filosofo.GarfoD)
+                {
+                    filosofo.VerificarComer();
+                }
+
+                if (!filosofo.Comendo)
+                {
+                    if (!filosofo.TokenE && !filosofo.TokenD)
+                    {
+                        filosofo.PedirComer();
+                        botao.Text = "Estou com fome!";
+                    }
+
+                }
+
+             
+               
+            }
+
+            if (filosofo.Comendo)
+            {
+                pictureBox1.Image = Properties.Resources.Comendo;
+                botao.Text = "Parar de Comer";
+
+                if (filosofo.Comendo)
+                {
+                    filosofo.PararComer();
+                    botao.Text = "Começar a comer";
+                }
+            }
+
+            if (filosofo.ComFome)
+            {
+                pictureBox1.Image = Properties.Resources.ComFome;
+                botao.Text = "Estou com fome";
+            }
+        }
+
+        private void btnf2_Click(object sender, EventArgs e)
+        {
+            verificarImagens(f2, btnf2);
+        }
+
+        private void btnf3_Click(object sender, EventArgs e)
+        {
+            verificarImagens(f3, btnf3);
         }
     }
 }
