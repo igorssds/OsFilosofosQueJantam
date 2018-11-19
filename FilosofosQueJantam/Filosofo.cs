@@ -14,8 +14,6 @@ namespace FilosofosQueJantam
         public bool GarfoSujoD, GarfoSujoE;
         public Filosofo VizinhoE, VizinhoD;
 
-
-
         public Filosofo(bool tokenE, bool tokenD, bool garfoE, bool garfoD, bool garfoSujoE, bool garfoSujoD)
         {
             TokenE = tokenE;
@@ -24,10 +22,6 @@ namespace FilosofosQueJantam
             GarfoD = garfoD;
             GarfoSujoE = garfoSujoE;
             GarfoSujoD = garfoSujoD;
-
-
-            
-
         }
 
         public void EnviarTokenE()

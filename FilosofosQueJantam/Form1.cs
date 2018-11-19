@@ -37,61 +37,59 @@ namespace FilosofosQueJantam
 
         private void btnf1_Click(object sender, EventArgs e)
         {
-            verificarImagens(f1, btnf1);
-        }
-
-        private void verificarImagens(Filosofo filosofo, Button botao)
-        {
-            if (filosofo.Meditando)
-            {
-                pictureBox1.Image = Properties.Resources.Pensando;
-
-                if (filosofo.GarfoE && filosofo.GarfoD)
-                {
-                    filosofo.VerificarComer();
-                }
-
-                if (!filosofo.Comendo)
-                {
-                    if (!filosofo.TokenE && !filosofo.TokenD)
-                    {
-                        filosofo.PedirComer();
-                        botao.Text = "Estou com fome!";
-                    }
-
-                }
-
-             
-               
-            }
-
-            if (filosofo.Comendo)
-            {
-                pictureBox1.Image = Properties.Resources.Comendo;
-                botao.Text = "Parar de Comer";
-
-                if (filosofo.Comendo)
-                {
-                    filosofo.PararComer();
-                    botao.Text = "Começar a comer";
-                }
-            }
-
-            if (filosofo.ComFome)
-            {
-                pictureBox1.Image = Properties.Resources.ComFome;
-                botao.Text = "Estou com fome";
-            }
+            verificarImagens(f1, btnf1, pictureBox1);
         }
 
         private void btnf2_Click(object sender, EventArgs e)
         {
-            verificarImagens(f2, btnf2);
+            verificarImagens(f2, btnf2, pictureBox2);
         }
 
         private void btnf3_Click(object sender, EventArgs e)
         {
-            verificarImagens(f3, btnf3);
+            verificarImagens(f3, btnf3, pictureBox3);
+        }
+
+        private void verificarImagens(Filosofo filosofo, Button botao, PictureBox img)
+        {
+
+            if (filosofo.Meditando)
+            {
+                img.Image = Properties.Resources.Pensando;
+
+                if (filosofo.GarfoSujoE && filosofo.GarfoSujoD)
+                {
+                    filosofo.VerificarComer();
+                } else
+                {
+                    filosofo.PedirComer();
+                }
+               
+            }
+
+            if (filosofo.ComFome)
+            {
+                img.Image = Properties.Resources.ComFome;
+                botao.Text = "Estou com fome";
+            }
+
+            if (filosofo.Comendo)
+            {
+                img.Image = Properties.Resources.Comendo;
+
+                if (botao.Text == "Parar de Comer")
+                {
+                    filosofo.PararComer();
+                }
+                
+                if (filosofo.GarfoSujoE && filosofo.GarfoSujoD)
+                {
+                    botao.Text = "Parar de Comer";
+                }
+            }
+
+          
+
         }
     }
 }
