@@ -16,13 +16,13 @@ namespace FilosofosQueJantam
         Filosofo f1 = new Filosofo(false, false, true, true, true, true);
         Filosofo f2 = new Filosofo(true, false, false, true, false, true);
         Filosofo f3 = new Filosofo(true, true, false, false, false, false);
+        string pararComer = "Parar de comer";
+        string comFome = "Estou com fome";
+        string comecarComer = "Começar a comer";
 
         public Form1()
         {
             InitializeComponent();
-
-
-            //pictureBox1.Image = Properties.Resources.Comendo;
 
             f1.VizinhoE = f3;
             f1.VizinhoD = f2;
@@ -30,8 +30,10 @@ namespace FilosofosQueJantam
             f2.VizinhoD = f3;
             f3.VizinhoE = f2;
             f3.VizinhoD = f1;
+            verificarGarfosTickets(f1, garfoDF1, garfoEF1, ticketDF1, ticketEF1);
+            verificarGarfosTickets(f2, garfoDF2, garfoEF2, ticketDF2, ticketEF2);
+            verificarGarfosTickets(f3, garfoDF3, garfoEF3, ticketDF3, ticketEF3);
 
-           
         }
 
 
@@ -60,36 +62,99 @@ namespace FilosofosQueJantam
                 if (filosofo.GarfoSujoE && filosofo.GarfoSujoD)
                 {
                     filosofo.VerificarComer();
-                } else
+                }
+                else
                 {
                     filosofo.PedirComer();
                 }
-               
+
             }
 
             if (filosofo.ComFome)
             {
                 img.Image = Properties.Resources.ComFome;
-                botao.Text = "Estou com fome";
+                botao.Text = comFome;
             }
 
             if (filosofo.Comendo)
             {
                 img.Image = Properties.Resources.Comendo;
 
-                if (botao.Text == "Parar de Comer")
+                if (botao.Text == pararComer)
                 {
                     filosofo.PararComer();
+                    img.Image = Properties.Resources.Pensando;
+                    botao.Text = comecarComer;
+
+                    if (f1.Comendo)
+                    {
+                        pictureBox1.Image = Properties.Resources.Comendo;
+                        btnf1.Text = pararComer;
+                    }
+
+                    if (f2.Comendo)
+                    {
+                        pictureBox2.Image = Properties.Resources.Comendo;
+                        btnf2.Text = pararComer;
+                    }
+
+                    if (f3.Comendo)
+                    {
+                        pictureBox3.Image = Properties.Resources.Comendo;
+                        btnf3.Text = pararComer;
+                    }
                 }
-                
+
                 if (filosofo.GarfoSujoE && filosofo.GarfoSujoD)
                 {
-                    botao.Text = "Parar de Comer";
+                    botao.Text = pararComer;
                 }
             }
 
-          
+            verificarGarfosTickets(f1, garfoDF1, garfoEF1, ticketDF1, ticketEF1);
+            verificarGarfosTickets(f2, garfoDF2, garfoEF2, ticketDF2, ticketEF2);
+            verificarGarfosTickets(f3, garfoDF3, garfoEF3, ticketDF3, ticketEF3);
 
+
+        }
+
+        private void verificarGarfosTickets(Filosofo f, Label garfoD, Label garfoE, Label ticketD, Label ticketE)
+        {
+            if (f1.GarfoSujoD)
+            {
+                garfoD.BackColor = Color.Tomato;
+            }
+            else
+            {
+                garfoD.BackColor = Color.White;
+            }
+            if (f1.GarfoSujoE)
+            {
+                garfoE.BackColor = Color.Tomato;
+            }
+            else
+            {
+                garfoE.BackColor = Color.White;
+            }
+
+            if (f1.TokenD)
+            {
+                ticketD.BackColor = Color.Green;
+            } 
+            else
+            {
+                ticketD.BackColor = Color.White;
+            }
+
+            if (f1.TokenE)
+            {
+                ticketE.BackColor = Color.Green;
+            }
+            else
+            {
+                ticketE.BackColor = Color.White;
+            }
+           
         }
     }
 }
