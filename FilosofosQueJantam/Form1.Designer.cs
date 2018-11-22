@@ -91,7 +91,7 @@
             // garfoEF1
             // 
             this.garfoEF1.AutoSize = true;
-            this.garfoEF1.Location = new System.Drawing.Point(275, 59);
+            this.garfoEF1.Location = new System.Drawing.Point(443, 59);
             this.garfoEF1.Name = "garfoEF1";
             this.garfoEF1.Size = new System.Drawing.Size(13, 13);
             this.garfoEF1.TabIndex = 4;
@@ -113,7 +113,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(274, 36);
+            this.label3.Location = new System.Drawing.Point(442, 36);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 6;
@@ -169,7 +169,7 @@
             // garfoDF1
             // 
             this.garfoDF1.AutoSize = true;
-            this.garfoDF1.Location = new System.Drawing.Point(442, 59);
+            this.garfoDF1.Location = new System.Drawing.Point(270, 59);
             this.garfoDF1.Name = "garfoDF1";
             this.garfoDF1.Size = new System.Drawing.Size(13, 13);
             this.garfoDF1.TabIndex = 12;
@@ -197,7 +197,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(442, 36);
+            this.label12.Location = new System.Drawing.Point(270, 36);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(15, 13);
             this.label12.TabIndex = 15;
@@ -206,7 +206,7 @@
             // ticketEF1
             // 
             this.ticketEF1.AutoSize = true;
-            this.ticketEF1.Location = new System.Drawing.Point(275, 82);
+            this.ticketEF1.Location = new System.Drawing.Point(443, 82);
             this.ticketEF1.Name = "ticketEF1";
             this.ticketEF1.Size = new System.Drawing.Size(14, 13);
             this.ticketEF1.TabIndex = 16;
@@ -215,7 +215,7 @@
             // ticketDF1
             // 
             this.ticketDF1.AutoSize = true;
-            this.ticketDF1.Location = new System.Drawing.Point(443, 82);
+            this.ticketDF1.Location = new System.Drawing.Point(271, 82);
             this.ticketDF1.Name = "ticketDF1";
             this.ticketDF1.Size = new System.Drawing.Size(14, 13);
             this.ticketDF1.TabIndex = 17;
@@ -318,6 +318,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

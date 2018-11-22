@@ -30,9 +30,7 @@ namespace FilosofosQueJantam
             f2.VizinhoD = f3;
             f3.VizinhoE = f2;
             f3.VizinhoD = f1;
-            verificarGarfosTickets(f1, garfoDF1, garfoEF1, ticketDF1, ticketEF1);
-            verificarGarfosTickets(f2, garfoDF2, garfoEF2, ticketDF2, ticketEF2);
-            verificarGarfosTickets(f3, garfoDF3, garfoEF3, ticketDF3, ticketEF3);
+
 
         }
 
@@ -67,6 +65,8 @@ namespace FilosofosQueJantam
                 {
                     filosofo.PedirComer();
                 }
+
+                botao.Text = comecarComer;
 
             }
 
@@ -120,7 +120,7 @@ namespace FilosofosQueJantam
 
         private void verificarGarfosTickets(Filosofo f, Label garfoD, Label garfoE, Label ticketD, Label ticketE)
         {
-            if (f1.GarfoSujoD)
+            if (f.GarfoSujoD)
             {
                 garfoD.BackColor = Color.Tomato;
             }
@@ -128,7 +128,7 @@ namespace FilosofosQueJantam
             {
                 garfoD.BackColor = Color.White;
             }
-            if (f1.GarfoSujoE)
+            if (f.GarfoSujoE)
             {
                 garfoE.BackColor = Color.Tomato;
             }
@@ -137,16 +137,26 @@ namespace FilosofosQueJantam
                 garfoE.BackColor = Color.White;
             }
 
-            if (f1.TokenD)
+            if (f.GarfoE && !f.Comendo && !f.GarfoSujoE)
+            {
+                garfoE.BackColor = Color.Blue;
+            }
+
+            if (f.GarfoD && !f.Comendo && !f.GarfoSujoD)
+            {
+                garfoD.BackColor = Color.Blue;
+            }
+
+            if (f.TokenD)
             {
                 ticketD.BackColor = Color.Green;
-            } 
+            }
             else
             {
                 ticketD.BackColor = Color.White;
             }
 
-            if (f1.TokenE)
+            if (f.TokenE)
             {
                 ticketE.BackColor = Color.Green;
             }
@@ -154,7 +164,14 @@ namespace FilosofosQueJantam
             {
                 ticketE.BackColor = Color.White;
             }
-           
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            verificarGarfosTickets(f1, garfoDF1, garfoEF1, ticketDF1, ticketEF1);
+            verificarGarfosTickets(f2, garfoDF2, garfoEF2, ticketDF2, ticketEF2);
+            verificarGarfosTickets(f3, garfoDF3, garfoEF3, ticketDF3, ticketEF3);
         }
     }
 }
